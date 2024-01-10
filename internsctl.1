@@ -1,0 +1,126 @@
+
+
+.TH INTERNSCTL 1 "January 2024" "v0.1.0" "internsctl manual"
+
+.SH NAME
+internsctl \- Perform various system-related tasks
+
+.SH SYNOPSIS
+.B internsctl
+[
+.B user
+.I [create <username>|list [--sudo-only]]
+|
+.B file
+.I getinfo <file-name> [options]
+|
+.B cpu
+.I getinfo
+|
+.B memory
+.I getinfo
+|
+.B --help
+|
+.B --version
+]
+
+.SH DESCRIPTION
+.B internsctl
+is a command-line tool for performing various system-related tasks, including user management, file information retrieval, and displaying CPU and memory information.
+
+.SH COMMANDS
+.TP
+.B user create <username>
+Create a new user with the specified username.
+
+.TP
+.B user list [--sudo-only]
+List all regular users or sudo users if the
+.B --sudo-only
+option is provided.
+
+.TP
+.B file getinfo <file-name> [options]
+Display information about the specified file. Additional options can be used to retrieve specific information such as size, permissions, owner, and last modified time.
+
+.TP
+.B cpu getinfo
+Display CPU information.
+
+.TP
+.B memory getinfo
+Display memory information.
+
+.TP
+.B --help
+Display this help message.
+
+.TP
+.B --version
+Display the version of
+.B internsctl.
+
+.SH OPTIONS
+.TP
+.B --size, -s
+Print file size.
+
+.TP
+.B --permissions, -p
+Print file permissions.
+
+.TP
+.B --owner, -o
+Print file owner.
+
+.TP
+.B --last-modified, -m
+Print last modified time.
+
+.SH EXAMPLES
+.B internsctl user create john
+Create a new user with the username 'john'.
+
+.B internsctl user list
+List all regular users.
+
+.B internsctl user list --sudo-only
+List all users with sudo permissions.
+
+.B internsctl file getinfo myfile.txt
+Display information about 'myfile.txt'.
+
+.B internsctl file getinfo --size myfile.txt
+Display the size of 'myfile.txt'.
+
+.B internsctl cpu getinfo
+Display CPU information.
+
+.B internsctl memory getinfo
+Display memory information.
+
+.SH SEE ALSO
+.BR lscpu(1),
+.BR free(1),
+.BR useradd(8),
+.BR getent(1),
+.BR stat(1)
+
+.SH AUTHOR
+Written by Your Name.
+
+.SH BUGS
+Report bugs to Your Email Address.
+
+.SH COPYRIGHT
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+.SH VERSION
+.B internsctl
+version
+.I v0.1.0
+(January 2024)
+
+.SH " "
